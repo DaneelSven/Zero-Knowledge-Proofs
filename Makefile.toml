@@ -1,0 +1,25 @@
+[tasks.starkli-keygen]
+description = "Generates a new demo key using starkli"
+command = "starkli"
+args = ["signer", "keystore", "new", "demo-key.json"]
+
+
+[tasks.init-starkli-account]
+description = "Initializes starkli account with predefined filenames"
+category = "Blockchain"
+command = "sh"
+args = ["-c", "starkli signer keystore new ./demo-key.json && starkli account oz init demo-account.json --keystore ./demo-key.json"]
+
+
+[tasks.deploy-starkli-account]
+description = "Deploys StarkNet account using starkli"
+category = "Blockchain"
+command = "sh"
+args = ["-c", "starkli account deploy demo-account.json --keystore ./demo-key.json"]
+
+
+[tasks.declare-contract]
+description = "Declares a StarkNet contract on Goerli testnet and watches for changes"
+category = "Blockchain Deployment"
+command = "sh"
+args = ["-c", "starkli declare ./target/dev/cairo_HelloStarknet.contract_class.json --account ./demo-account.json --keystore ./demo-key.json --compiler-version 2.4.0 --network goerli-1 --watch"]
