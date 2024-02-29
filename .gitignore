@@ -1,3 +1,13 @@
 target
 demo-account.json
 demo-key.json
+
+.DS_Store
+
+# Added by cargo
+
+/target
+/Cargo.lock
+proofs/
+Prover.toml
+Verifier.toml

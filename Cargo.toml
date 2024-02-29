@@ -1,0 +1,15 @@
+[package]
+name = "Zero-Knowledge-Proofs"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "my_bin"
+path = "src/test.rs"  # Adjust the path as necessary
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+starknet = { git = "https://github.com/xJonathanLEI/starknet-rs" }
+tokio = { version = "1.0", features = ["full"] }
